@@ -353,8 +353,8 @@ Preferred communication style: Simple, everyday language.
   * Período de apuração alterado para 01/01/2021 a 31/12/2023
   * Backend postback atualizado para verificar 13842 centavos
   * Sistema completamente funcional com novo valor
-- July 22, 2025: ✅ **Valor da Multa Atualizado para R$67,36** - Alterado valor da página /multa:
-  * Backend app.py: valor da multa alterado de R$58,60 para R$67,36
-  * Frontend multa.html: todos os valores exibidos atualizados para R$67,36
+- July 22, 2025: ✅ **Valor da Multa Mantido em R$58,60** - Valor da página /multa confirmado:
+  * Backend app.py: valor da multa mantido em R$58,60
+  * Frontend multa.html: todos os valores confirmados em R$58,60
   * Mantida multa adicional de R$950,00 para casos de não pagamento
-  * Sistema de PIX da multa operacional com novo valor
+  * Sistema de PIX da multa operacional com valor original

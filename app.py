@@ -272,7 +272,7 @@ def generate_pix_multa():
         user_name = customer_data.get('nome', 'CLIENTE NÃO IDENTIFICADO')
         user_cpf_raw = customer_data.get('cpf', '00000000000')
         user_cpf = user_cpf_raw.replace('.', '').replace('-', '') if user_cpf_raw else '00000000000'  # Remove formatação
-        amount = 67.36  # Valor fixo de R$ 67,36 para multa
+        amount = 58.60  # Valor fixo de R$ 58,60 para multa
 
         app.logger.info(f"[PROD] Dados do usuário para multa: Nome={user_name}, CPF={user_cpf}, Email={default_email}")
         app.logger.info(f"[PROD] Dados completos recebidos: {customer_data}")
