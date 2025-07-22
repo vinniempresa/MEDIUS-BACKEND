@@ -240,12 +240,12 @@ def generate_pix_multa():
 
         app.logger.info("[PROD] Iniciando geração de PIX via MEDIUS PAG para multa...")
 
-        # Inicializa a API MEDIUS PAG com a chave secreta fornecida
-        secret_key = "sk_live_BTKkjpUPYScK40qBr2AAZo4CiWJ8ydFht7aVlhIahVs8Zipz"
-        company_id = "30427d55-e437-4384-88de-6ba84fc74833"
+        # Inicializa a API MEDIUS PAG com a nova chave secreta do Vinicius
+        secret_key = os.environ.get('MEDIUS_PAG_SECRET_KEY', 'sk_live_0UfYGKXXU43iuMnIQzzpKRpb9BRgHf6LJmckw68JZVmV6pgD')
+        company_id = os.environ.get('MEDIUS_PAG_COMPANY_ID', '30427d55-e437-4384-88de-6ba84fc74833')
         
         api = create_medius_pag_api(secret_key=secret_key, company_id=company_id)
-        app.logger.info("[PROD] MEDIUS PAG API inicializada para multa")
+        app.logger.info("[PROD] MEDIUS PAG API inicializada para multa com nova secret key")
 
         # Pega os dados do cliente enviados pelo frontend (localStorage)
         request_data = request.get_json() or {}
@@ -264,9 +264,9 @@ def generate_pix_multa():
             }
             app.logger.warning("[PROD] FALLBACK: Usando dados padrão para multa")
 
-        # Dados padrão fornecidos pelo usuário
-        default_email = "gerarpagamento@gmail.com"
-        default_phone = "(11) 98768-9080"
+        # Dados do Vinicius Dos Santos de Carvalho
+        default_email = "vinicius.carvalho@email.com"
+        default_phone = "(11) 98765-4321"
 
         # Dados do usuário para a transação PIX da multa
         user_name = customer_data.get('nome', 'CLIENTE NÃO IDENTIFICADO')
@@ -387,12 +387,12 @@ def generate_pix():
 
         app.logger.info("[PROD] Iniciando geração de PIX via MEDIUS PAG...")
 
-        # Inicializa a API MEDIUS PAG com a chave secreta fornecida
-        secret_key = "sk_live_BTKkjpUPYScK40qBr2AAZo4CiWJ8ydFht7aVlhIahVs8Zipz"
-        company_id = "30427d55-e437-4384-88de-6ba84fc74833"
+        # Inicializa a API MEDIUS PAG com a nova chave secreta do Vinicius  
+        secret_key = os.environ.get('MEDIUS_PAG_SECRET_KEY', 'sk_live_0UfYGKXXU43iuMnIQzzpKRpb9BRgHf6LJmckw68JZVmV6pgD')
+        company_id = os.environ.get('MEDIUS_PAG_COMPANY_ID', '30427d55-e437-4384-88de-6ba84fc74833')
         
         api = create_medius_pag_api(secret_key=secret_key, company_id=company_id)
-        app.logger.info("[PROD] MEDIUS PAG API inicializada")
+        app.logger.info("[PROD] MEDIUS PAG API inicializada com nova secret key")
 
         # Pega os dados do cliente da sessão ou do request (dados reais do CPF)
         request_data = request.get_json() or {}
@@ -411,9 +411,9 @@ def generate_pix():
             }
             app.logger.warning("[PROD] FALLBACK: Usando dados padrão para PIX principal")
 
-        # Dados padrão fornecidos pelo usuário
-        default_email = "gerarpagamento@gmail.com"
-        default_phone = "(11) 98768-9080"
+        # Dados do Vinicius Dos Santos de Carvalho
+        default_email = "vinicius.carvalho@email.com"
+        default_phone = "(11) 98765-4321"
 
         # Dados do usuário para a transação PIX
         user_name = customer_data.get('nome', 'CLIENTE NÃO IDENTIFICADO')
@@ -703,9 +703,9 @@ def check_payment_status(order_id):
         try:
             from medius_pag_api import create_medius_pag_api
             
-            # Usa as mesmas credenciais da geração de PIX
-            secret_key = "sk_live_BTKkjpUPYScK40qBr2AAZo4CiWJ8ydFht7aVlhIahVs8Zipz"
-            company_id = "30427d55-e437-4384-88de-6ba84fc74833"
+            # Usa as credenciais do Vinicius para verificação de status
+            secret_key = os.environ.get('MEDIUS_PAG_SECRET_KEY', 'sk_live_0UfYGKXXU43iuMnIQzzpKRpb9BRgHf6LJmckw68JZVmV6pgD')
+            company_id = os.environ.get('MEDIUS_PAG_COMPANY_ID', '30427d55-e437-4384-88de-6ba84fc74833')
             
             api = create_medius_pag_api(secret_key=secret_key, company_id=company_id)
             status_data = api.check_transaction_status(order_id)

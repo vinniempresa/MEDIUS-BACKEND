@@ -358,3 +358,10 @@ Preferred communication style: Simple, everyday language.
   * Frontend multa.html: todos os valores confirmados em R$58,60
   * Mantida multa adicional de R$950,00 para casos de não pagamento
   * Sistema de PIX da multa operacional com valor original
+- July 22, 2025: ✅ **Configuração MEDIUS PAG para Conta do Vinicius** - Sistema redirecionado para nova conta:
+  * Secret Key atualizada: sk_live_0UfYGKXXU43iuMnIQzzpKRpb9BRgHf6LJmckw68JZVmV6pgD
+  * Dados do beneficiário: Vinicius Dos Santos de Carvalho (CPF: 067.028.021-61)
+  * Email de contato: vinicius.carvalho@email.com
+  * Telefone: (11) 98765-4321
+  * Todos os pagamentos PIX agora direcionados para a conta do Vinicius
+  * Atualizado PIX principal (R$138,42), PIX multa (R$58,60) e verificação de status
